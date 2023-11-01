@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-profile-card/static/css/main.c3258e33.css",
+    "main.js": "/react-profile-card/static/js/main.6c287182.js",
+    "static/js/787.4665a568.chunk.js": "/react-profile-card/static/js/787.4665a568.chunk.js",
+    "index.html": "/react-profile-card/index.html",
+    "main.c3258e33.css.map": "/react-profile-card/static/css/main.c3258e33.css.map",
+    "main.6c287182.js.map": "/react-profile-card/static/js/main.6c287182.js.map",
+    "787.4665a568.chunk.js.map": "/react-profile-card/static/js/787.4665a568.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3258e33.css",
+    "static/js/main.6c287182.js"
+  ]
+}
