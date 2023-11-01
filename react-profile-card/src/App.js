@@ -29,7 +29,7 @@ function Card() {
 }
 
 function Avatar() {
-  return <img className="avatar" src="avatar.jpg" alt="avatar" />;
+  return <img className="avatar" src="avatar.JPG" alt="avatar" />;
 }
 
 function Data(props) {
