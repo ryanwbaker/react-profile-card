@@ -2,16 +2,15 @@ const desc =
   "Electrical and software engineer focused on web development and programming. When not coding or studying code, I like cooking, photography, and video games.";
 
 const skills = [
-  { skill: "NumPy", emoji: "🧮" },
-  { skill: "Pandas", emoji: "🐼" },
-  { skill: "Matplotlib", emoji: "📊" },
-  { skill: "Scikit-learn", emoji: "🤖" },
-  { skill: "Django", emoji: "🌐" },
-  { skill: "React.js", emoji: "⚛️" },
-  { skill: "Node.js", emoji: "🌐" },
-  { skill: "Vite", emoji: "🚀" },
+  { skill: "NumPy", emoji: "🧮", colour: "#F3722C" },
+  { skill: "Pandas", emoji: "🐼", colour: "#009E74" },
+  { skill: "Matplotlib", emoji: "📊", colour: "#FFD166" },
+  { skill: "Scikit-learn", emoji: "🤖", colour: "#11698E" },
+  { skill: "Django", emoji: "🌐", colour: "#EF476F" },
+  { skill: "React.js", emoji: "⚛️", colour: "#06D6A0" },
+  { skill: "Node.js", emoji: "🌐", colour: "#FF003C" },
+  { skill: "Vite", emoji: "🚀", colour: "#FF7A5C" },
 ];
-
 function App() {
   return (
     <div className="App">
@@ -57,7 +56,7 @@ function SkillList(props) {
     <div className="skill-list">
       {props.skills.map((el) => {
         console.log(el);
-        return <Skill skill={el.skill} emoji={el.emoji} />;
+        return <Skill skill={el.skill} emoji={el.emoji} colour={el.colour} />;
       })}
     </div>
   );
@@ -65,7 +64,7 @@ function SkillList(props) {
 
 function Skill(props) {
   return (
-    <div className="skill">
+    <div className="skill" style={{ backgroundColor: props.colour }}>
       {props.skill} {props.emoji}
     </div>
   );
