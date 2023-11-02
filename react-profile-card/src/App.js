@@ -1,15 +1,16 @@
+import avatar from "./avatar.JPG";
 const desc =
   "Electrical and software engineer focused on web development and programming. When not coding or studying code, I like cooking, photography, and video games.";
 
 const skills = [
-  { skill: "NumPy", emoji: "🧮", colour: "#F3722C" },
-  { skill: "Pandas", emoji: "🐼", colour: "#009E74" },
-  { skill: "Matplotlib", emoji: "📊", colour: "#FFD166" },
-  { skill: "Scikit-learn", emoji: "🤖", colour: "#11698E" },
-  { skill: "Django", emoji: "🌐", colour: "#EF476F" },
-  { skill: "React.js", emoji: "⚛️", colour: "#06D6A0" },
-  { skill: "Node.js", emoji: "🌐", colour: "#FF003C" },
-  { skill: "Vite", emoji: "🚀", colour: "#FF7A5C" },
+  { skill: "NumPy", emoji: "🧮", color: "#F3722C", level: "advanced" },
+  { skill: "Pandas", emoji: "🐼", color: "#009E74", level: "advanced" },
+  { skill: "Matplotlib", emoji: "📊", color: "#FFD166", level: "advanced" },
+  { skill: "Scikit-learn", emoji: "🤖", color: "#11698E", level: "advanced" },
+  { skill: "Django", emoji: "🌐", color: "#EF476F", level: "intermediate" },
+  { skill: "React.js", emoji: "⚛️", color: "#06D6A0", level: "beginner" },
+  { skill: "Node.js", emoji: "🌐", color: "#FF003C", level: "intermediate" },
+  { skill: "Vite", emoji: "🚀", color: "#FF7A5C", level: "beginner" },
 ];
 function App() {
   return (
@@ -29,15 +30,15 @@ function Card() {
 }
 
 function Avatar() {
-  return <img className="avatar" src="avatar.JPG" alt="avatar" />;
+  return <img className="avatar" src={avatar} alt="avatar" />;
 }
 
-function Data(props) {
+function Data({ name, desc, skills }) {
   return (
     <div className="data body">
-      <FullName name={props.name} />
-      <Desc desc={props.desc} />
-      <SkillList skills={props.skills} />
+      <FullName name={name} />
+      <Desc desc={desc} />
+      <SkillList skills={skills} />
     </div>
   );
 }
@@ -51,21 +52,28 @@ function Desc(props) {
 }
 export default App;
 
-function SkillList(props) {
+function SkillList({ skills }) {
   return (
     <div className="skill-list">
-      {props.skills.map((el) => {
-        console.log(el);
-        return <Skill skill={el.skill} emoji={el.emoji} colour={el.colour} />;
+      {skills.map((el) => {
+        return (
+          <Skill
+            skill={el.skill}
+            emoji={el.emoji}
+            color={el.color}
+            level={el.level}
+          />
+        );
       })}
     </div>
   );
 }
 
-function Skill(props) {
+function Skill({ color, emoji, skill, level }) {
   return (
-    <div className="skill" style={{ backgroundColor: props.colour }}>
-      {props.skill} {props.emoji}
+    <div className="skill" style={{ backgroundColor: color }}>
+      {emoji} {skill}{" "}
+      {level === "advanced" ? "💪" : level === "intermediate" ? "👍" : "👶"}
     </div>
   );
 }
